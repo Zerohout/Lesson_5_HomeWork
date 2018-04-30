@@ -42,11 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sepo\Sepo.csproj">
+      <Project>{29ab39e3-a433-4ce9-8b23-0c3338ad3b38}</Project>
+      <Name>Sepo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task_1\Task_1.csproj">
+      <Project>{d27996af-fc58-48b4-95c0-218156551fcb}</Project>
+      <Name>Task_1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
