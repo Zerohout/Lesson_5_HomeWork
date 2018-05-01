@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sepo
+﻿namespace Sepo
 {
+    using System;
+
     class Program
     {
         static void Main()
@@ -41,8 +37,6 @@ namespace Sepo
             }
             return selectedTask;
         }
-
-        //public int SelectedTask() => selectedTask;
     }
 
     public static class Exit // Выход
@@ -72,6 +66,45 @@ namespace Sepo
                     return i;
                 }
             }
+        }
+
+        public static void ExitProgram()
+        // Выход из программы с сюрпризом (пасхалкой)
+        {
+            Console.Clear();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 14, Console.WindowHeight / 2);
+            Console.Write("Для Вас старался ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Фарит Ахмеров.\n");
+            Console.ResetColor();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 12, Console.WindowHeight / 2 + 1);
+            Console.WriteLine("Для выхода нажмите 'Enter'.");
+
+            do
+            {
+                var cki = Console.ReadKey();
+                if (cki.Key != ConsoleKey.Enter)
+                {
+                    var rnd = new Random();
+                    var colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
+                    do
+                    {
+                        Console.SetCursorPosition(rnd.Next(1, Console.WindowWidth - 2), rnd.Next(1, Console.WindowHeight - 1));
+
+                    } while ((Console.CursorLeft > Console.WindowWidth / 2 - 16 &&
+                              Console.CursorLeft < Console.WindowWidth / 2 + 18) &&
+                             (Console.CursorTop >= Console.WindowHeight / 2 - 1 &&
+                                 Console.CursorTop <= Console.WindowHeight / 2 + 2));
+
+                    Console.ForegroundColor = colors[rnd.Next(0, colors.Length)];
+                    Console.BackgroundColor = colors[rnd.Next(0, colors.Length)];
+                }
+                else
+                {
+                    break;
+                }
+
+            } while (true);
         }
     }
 
