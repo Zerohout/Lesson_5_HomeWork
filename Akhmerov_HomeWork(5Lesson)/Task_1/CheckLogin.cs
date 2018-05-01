@@ -11,7 +11,10 @@
         {
             while (true) // Цикл повтора списка заданий
             {
-                if (!TaskTumbler()) break;
+                if (!TaskTumbler())
+                {
+                    break;
+                }
             }
         }
 

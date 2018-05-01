@@ -1,41 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sepo;
-using Task_1;
-
-namespace StartProgram
+﻿namespace StartProgram
 {
+    using System;
+    using Sepo;
+    using Task_1;
+
     class Start
     {
-        private static bool exit;
         static void Main()
         {
-            while(true){
-
-                Console.Clear();
-                var st = new SetLabel();
-                st.Label("Выберите действие");
-                st.AddPoint(0, "Выход");
-                st.AddPoint(1, "Проверка ввода логина");
-
-
-                switch (st.UserSelTask())
-                {
-                    case 0:
-                        exit = true;
-                        break;
-                    case 1:
-                        CheckLogin.Main();
-                        break;
-                }
-
-                if (exit)
+            while (true)
+            {
+                if (!Tumbler())
                 {
                     break;
                 }
+            }
+        }
+
+        static bool Tumbler()
+        {
+            Console.Clear();
+            var st = new SetLabel();
+            st.Label("Выберите действие");
+            st.AddPoint(0, "Выход");
+            st.AddPoint(1, "Проверка ввода логина");
+
+            switch (st.UserSelTask())
+            {
+                case 0:
+                    Exit.ExitProgram();
+                    return false;
+                case 1:
+                    CheckLogin.Main();
+                    return true;
+                default:
+                    return true;
             }
         }
     }
