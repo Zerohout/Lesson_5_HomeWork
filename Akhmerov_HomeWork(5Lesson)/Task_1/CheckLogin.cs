@@ -21,17 +21,17 @@
         static bool TaskTumbler()
         // Переключатель заданий
         {
-            var st = new SetLabel();
+            var sl = new SetLabel();
             int sel;
 
             do // Цикл выбора заданий
             {
                 Console.Clear();
-                st.Label("Выберите действие");
-                st.AddPoint(0, "Возврат в главное меню");
-                st.AddPoint(1, "Проверка без регулярных выражений");
-                st.AddPoint(2, "Проверка с регулярным выражением");
-                sel = st.UserSelTask();
+                sl.Label("Выберите действие");
+                sl.AddPoint(0, "Возврат в главное меню");
+                sl.AddPoint(1, "Проверка без регулярных выражений");
+                sl.AddPoint(2, "Проверка с регулярным выражением");
+                sel = sl.UserSelTask();
             } while (sel < 0 || sel > 2);
 
             while (true) // Цикл повтора заданий

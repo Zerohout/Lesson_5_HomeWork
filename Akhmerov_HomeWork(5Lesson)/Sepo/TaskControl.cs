@@ -15,13 +15,13 @@
         private int selectedTask;
         public void Label(string label) // Заголовок меню
         {
-            Console.SetCursorPosition(20, Console.CursorTop + 3);
+            Console.SetCursorPosition(5, Console.CursorTop + 2);
             Console.WriteLine($"{label}:");
         }
 
         public void AddPoint(int numTask, string nameTask) // Пункт меню
         {
-            Console.SetCursorPosition(20, Console.CursorTop + 2);
+            Console.SetCursorPosition(5, Console.CursorTop + 1);
             Console.WriteLine($"{numTask}) {nameTask}.");
         }
 
