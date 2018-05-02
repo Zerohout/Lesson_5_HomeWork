@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Sepo;
-namespace Task_2
+﻿namespace Task_2
 {
-
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using Sepo;
 
     public class Task_2
     {

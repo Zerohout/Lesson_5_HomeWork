@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sepo;
-
-namespace Task_3
+﻿namespace Task_3
 {
+    using System;
+    using Sepo;
+
     public class Anagram
     {
         public static void Main()
