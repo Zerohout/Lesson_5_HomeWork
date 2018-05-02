@@ -4,6 +4,7 @@
     using Sepo;
     using Task_1;
     using Task_2;
+    using Task_3;
 
     class Start
     {
@@ -26,6 +27,7 @@
             st.AddPoint(0, "Выход");
             st.AddPoint(1, "Проверка ввода логина");
             st.AddPoint(2,"Операции с текстом");
+            st.AddPoint(3,"Проверка на анаграммность");
 
             switch (st.UserSelTask())
             {
@@ -37,6 +39,9 @@
                     return true;
                 case 2:
                     Task_2.Main();
+                    return true;
+                case 3:
+                    Anagram.Main();
                     return true;
                 default:
                     return true;
